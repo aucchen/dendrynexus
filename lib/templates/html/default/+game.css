@@ -1,9 +1,9 @@
 body {
   font-family: "Minion Pro", Georgia, serif;
-  font-size: 1.125em;
+  /*font-size: 1.125em;*/
   background-color: #f3f3e3;
   padding: 2em;
-  line-height: 1.65em;
+  line-height: 155%;
 }
 header, #content, footer {
   color: #431;
@@ -64,6 +64,7 @@ a {
 }
 p {
   margin: 0;
+  margin-bottom: 1em;
   text-indent: 1em;
 }
 h1 + p {
@@ -97,7 +98,7 @@ ul.choices {
 }
 ul.choices li {
   border-bottom: 1px solid #876;
-  padding: 0.25em;
+  padding: 0.5em;
 }
 ul.choices li div.subtitle {
   margin-left: 2em;
