@@ -10,3 +10,9 @@ tools and a common file format for hypertext interactive fiction. My
 ability to work on this project is minimal, so until I remove this
 message and describe the contents of this repo, assume that the tools
 are incomplete, missing or non-functional.
+
+To install:
+
+`sudo npm install -g .`
+
+Examples:
