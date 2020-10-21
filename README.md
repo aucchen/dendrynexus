@@ -15,4 +15,43 @@ To install:
 
 `sudo npm install -g .`
 
-Examples:
+To create a playable html/js from a dendry project:
+
+`dendry make-html`
+
+## Examples
+
+Displaying variables in text: `[+ var : +]`
+
+Varying text based on a condition: `[? if var = 1 : something ?]`
+
+Basic scene example:
+
+```
+@scene1
+title: Scene
+subtitle: subtitle of the scene
+unavailable-subtitle: scene cannot be selected
+view-if: var1 = 1 and (var2 = 2 or var3 = 3)
+choose-if: var4 = 4
+on-arrival: v2 = 1; v3 = 3; vs = "abc"
+go-to: scene2 if v2 = 2; scene3 if v3 = 3
+tags: start, tag1, tag2
+new-page: true
+max-visits: 2
+
+Content goes here.
+
+var1: [+ var1 : +]
+
+vs: [+ vs : +]
+
+[? if var1 = 1 : aaaaa ?]
+
+- @scene2: Choice 1
+- @scene3: Choice 2
+```
+
+Including javascript in `on-arrival`: `{! Q['var1'] = Math.cos(Math.PI/4); !}`
+
+Including javascript in `view-if`: `{! return ((Q['a'] || 0)===(Q['b'] || 0)); !}`
