@@ -55,3 +55,8 @@ vs: [+ vs : +]
 Including javascript in `on-arrival`: `{! Q['var1'] = Math.cos(Math.PI/4); !}`
 
 Including javascript in `view-if`: `{! return ((Q['a'] || 0)===(Q['b'] || 0)); !}`
+
+
+## Debugging
+
+In the browser, the state is stored as `dendryUI.dendryEngine.state`. Qualities are at `dendryUI.dendryEngine.state.qualities`.

@@ -2,12 +2,12 @@ body {
   font-family: "Minion Pro", Georgia, serif;
   /*font-size: 1.125em;*/
   background-color: #f3f3e3;
-  padding: 2em;
+  padding: 0;
   line-height: 155%;
 }
 header, #content, footer {
   color: #431;
-  max-width: 560px;
+  max-width: 540px;
   margin: 0 auto;
 }
 footer {
