@@ -29,6 +29,7 @@ syn match command '^is-special: .*$' contains=boolean
 syn match command '^view-if:'
 syn match command '^choose-if:'
 syn match command '^on-arrival:' nextgroup=jsBrackets,jsRegion skipwhite
+syn match command '^on-departure:' nextgroup=jsBrackets,jsRegion skipwhite
 syn match command '^go-to:'
 syn match command '^tags:'
 syn match command '^max-visits:'
