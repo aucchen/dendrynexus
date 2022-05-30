@@ -13,7 +13,7 @@ are incomplete, missing or non-functional.
 
 To install:
 
-`sudo npm install -g .`
+`npm install -g .`
 
 To create a new project:
 

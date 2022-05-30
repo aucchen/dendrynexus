@@ -9,10 +9,10 @@ endif
 
 syn match todo 'TODO'
 
-syn match scene_id '^@\w*$'
-syn match link_line '^-\s*[@#]\w*' contains=link_id
-syn match link_id contained '@\w*'
-syn match link_id contained '#\w*'
+syn match scene_id '^@[a-zA-Z0-9\-_]*$'
+syn match link_line '^-\s*[@#][a-zA-Z0-9\-_]*' contains=link_id
+syn match link_id contained '@[a-zA-Z0-9\-_]*'
+syn match link_id contained '#[a-zA-Z0-9\-_]*'
 
 syn match if_statement contained 'if' nextgroup=colon skipwhite
 syn match plaintext contained '[a-zA-Z0-9.?,]*'
@@ -33,10 +33,15 @@ syn match command '^on-departure:' nextgroup=jsBrackets,jsRegion skipwhite
 syn match command '^go-to:'
 syn match command '^tags:'
 syn match command '^max-visits:'
+syn match command '^min-choices:'
 syn match command '^max-choices:'
+syn match command '^order:'
 syn match command '^priority:'
+syn match command '^frequency:'
+syn match command '^signal:'
 syn match command '^set-bg:'
 syn match command '^set-jump:'
+syn match command '^game-over:'
 
 
 syn match comment '^#.*$'
