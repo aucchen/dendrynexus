@@ -6,10 +6,8 @@
 [![Test Coverage](https://coveralls.io/repos/dendry/dendry/badge.png?branch=master)](https://coveralls.io/r/dendry/dendry)
 
 This is a new project aimed at developing a suite of command line
-tools and a common file format for hypertext interactive fiction. My
-ability to work on this project is minimal, so until I remove this
-message and describe the contents of this repo, assume that the tools
-are incomplete, missing or non-functional.
+tools and a common file format for hypertext interactive fiction.
+
 
 To install:
 
@@ -80,7 +78,7 @@ All of these are elements that can be used in the body text.
 
 ## Examples
 
-Displaying variables in text: `[+ var : +]`
+Displaying variables in text: `[+ var +]`
 
 Varying text based on a condition: `[? if var = 1 : something ?]`
 
