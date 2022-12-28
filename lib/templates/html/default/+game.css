@@ -168,6 +168,7 @@ blockquote + blockquote.attribution {
     bottom: 0;
     left: 0;
     z-index: 2;
+    overflow: scroll;
 }
 .overlay_top {
     position: relative;
@@ -210,3 +211,46 @@ blockquote + blockquote.attribution {
 }
 .delete_button {
 }
+
+/*
+ * sprite stuff- feel free to comment out/remove if not using
+ */
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#contentSpriteContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: 62em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: -97;
+}
+.sprite {
+    position: absolute;
+    width: 180px;
+}
+#topLeftSprite {
+    float: left;
+    top: -1em;
+    left: 0.4em;
+}
+#topRightSprite {
+    float: right;
+    top: -1em;
+    right: 0.4em;
+}
+#bottomLeftSprite {
+    float: left;
+    left: 0.4em;
+    top: 50%;
+}
+#bottomRightSprite {
+    float: right;
+    right: 0.4em;
+    top: 50%;
+}
+
