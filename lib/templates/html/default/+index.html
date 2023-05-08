@@ -19,13 +19,13 @@
     <header>
       <h1>{{game.title}}</h1>
       <h2>{{game.author}}</h2>
-      <!-- Uncomment to show the top bar. If not using stats or save files, comment out those lines.
+
       <div id="header-links">
-        <a id="stats-link" onclick="window.showStats();" href="#">Status</a>
+        <!--<a id="stats-link" onclick="window.showStats();" href="#">Status</a>-->
         <a onclick="window.showSaveSlots();" href="#">Save/Load</a>
         <a onclick="window.showOptions();" href="#">Options</a>
       </div>
-      -->
+
     </header>
 
     <div id="options" class="overlay" style="display: none;">
@@ -96,6 +96,27 @@
 
     <div id="save" style="display: none;">
         <table id="saves_table">
+            <tr>
+                <td>Auto-0</td>
+                <td>
+                    <button class="b save_button" id="save_button_a0">Save</button>
+                </td>
+                <td>
+                    <button class="b delete_button" id="delete_button_a0">Delete</button>
+                </td>
+                <td class="save_info" id="save_info_a0"></td>
+            </tr>
+            <tr>
+                <td>Auto-1</td>
+                <td>
+                    <button class="b save_button" id="save_button_a1">Save</button>
+                </td>
+                <td>
+                    <button class="b delete_button" id="delete_button_a1">Delete</button>
+                </td>
+                <td class="save_info" id="save_info_a1"></td>
+            </tr>
+            
             <tr>
                 <td>0</td>
                 <td>
