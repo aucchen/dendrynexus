@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta prefix="ifiction: http://babel.ifarchive.org/protocol/iFiction/"
+        property="ifiction:ifid" content="{{game.ifid}}">
     <title>{{game.title}} - {{game.author}}</title>
     <link rel="stylesheet" type="text/css" href="game.css">
     <script src="jquery-1.11.1.min.js"></script>
@@ -217,12 +219,13 @@
     <div id='content'></div>
 
     <footer>
+      <!--
       <p>
         <a onclick="window.showSaveSlots();" href="#">Save/Load</a>
         <a onclick="window.quickSave();" href="#">Quick Save</a>
         <a onclick="window.quickLoad();" href="#">Quick Load</a>
       </p>
-      <!--
+
       &copy; 2021 Autumn Chen.
       Made with <a href="https://github.com/aucchen/dendry">Dendry</a>.
       -->
