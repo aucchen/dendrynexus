@@ -1214,7 +1214,7 @@
         validators.validateGoTo('@foo if $bar', null, function(err, result) {
           (!!err).should.be.true;
           err.toString().includes(
-            'Error: Unrecognized content at position 0.'
+            'Unrecognized content at position 0.'
           ).should.be.true;
           done();
         });

@@ -104,7 +104,7 @@
         tokenizer.run('foo $ 2', function(err, tokens) {
           (!!err).should.be.true;
           err.toString().includes(
-            'Error: Unrecognized content at position 4.'
+            'Unrecognized content at position 4.'
           ).should.be.true;
           (tokens === undefined).should.be.true;
           done();
@@ -117,7 +117,7 @@
         tokenizer.run('foo < 2 $', function(err, tokens) {
           (!!err).should.be.true;
           err.toString().includes(
-            'Error: Unrecognized content at position 8.'
+            'Unrecognized content at position 8.'
           ).should.be.true;
           (tokens === undefined).should.be.true;
           done();
