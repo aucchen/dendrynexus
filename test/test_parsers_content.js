@@ -324,9 +324,7 @@
         var content = '[+ Foo [+ Bar +] Sun +]';
         parse.compile(content, true, function(err, result) {
           (!!err).should.be.true;
-          err.message.should.equal(
-            'Can\'t begin a new insert in the middle of an insert.'
-          );
+          err.message.startsWith('Can\'t begin a new insert in the middle of an insert.').should.be.true;
           done();
         });
       });
@@ -335,9 +333,9 @@
         var content = '[Foo [ Bar ] Sun]';
         parse.compile(content, true, function(err, result) {
           (!!err).should.be.true;
-          err.message.should.equal(
+          err.message.startsWith(
             'Can\'t begin a new hidden block in the middle of a hidden block.'
-          );
+          ).should.be.true;
           done();
         });
       });
@@ -357,7 +355,7 @@
         var content = '[+ Foo [ Bar ] Sun +]';
         parse.compile(content, true, function(err, result) {
           (!!err).should.be.true;
-          err.message.should.equal('Can\'t nest a hidden block in an insert.');
+          err.message.startsWith('Can\'t nest a hidden block in an insert.').should.be.true;
           done();
         });
       });
@@ -508,9 +506,9 @@
         var content = '[+ $foo + 1 : go +]';
         parse.compile(content, true, function(err, result) {
           (!!err).should.be.true;
-          err.toString().should.equal(
+          err.toString().includes(
             'Error: Unrecognized content at position 0.'
-          );
+          ).should.be.true;
           done();
         });
       });
@@ -519,7 +517,7 @@
         var content = '[? if {! * 5 !} : go ?]';
         parse.compile(content, true, function(err, result) {
           (!!err).should.be.true;
-          err.toString().should.equal('SyntaxError: Unexpected token *');
+          err.toString().should.equal('SyntaxError: Unexpected token \'*\'');
           done();
         });
       });

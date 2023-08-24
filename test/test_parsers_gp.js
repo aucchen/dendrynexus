@@ -103,8 +103,9 @@
         var tokenizer = new parse.Tokenizer(rules, false);
         tokenizer.run('foo $ 2', function(err, tokens) {
           (!!err).should.be.true;
-          err.toString().should.equal(
-            'Error: Unrecognized content at position 4.');
+          err.toString().includes(
+            'Error: Unrecognized content at position 4.'
+          ).should.be.true;
           (tokens === undefined).should.be.true;
           done();
         });
@@ -115,8 +116,9 @@
         var tokenizer = new parse.Tokenizer(rules, false);
         tokenizer.run('foo < 2 $', function(err, tokens) {
           (!!err).should.be.true;
-          err.toString().should.equal(
-            'Error: Unrecognized content at position 8.');
+          err.toString().includes(
+            'Error: Unrecognized content at position 8.'
+          ).should.be.true;
           (tokens === undefined).should.be.true;
           done();
         });

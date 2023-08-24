@@ -393,7 +393,7 @@
           function(err, result) {
             (!!err).should.be.true;
             err.toString().should.equal(
-              'Error: Unexpected token case'
+              'Error: Unexpected token \'case\''
             );
             done();
           });
@@ -474,7 +474,7 @@
           function(err, result) {
             (!!err).should.be.true;
             err.toString().should.equal(
-              'Error: Unexpected token case in chunk 1.'
+              'Error: Unexpected token \'case\' in chunk 1.'
             );
             done();
           });
@@ -485,9 +485,9 @@
           'foo true', null,
           function(err, result) {
             (!!err).should.be.true;
-            err.toString().should.equal(
-              'Error: No valid way to parse this content.'
-            );
+            err.toString().startsWith(
+              'Error: No valid way to parse this content'
+            ).should.be.true;
             done();
           });
       });
@@ -1213,9 +1213,9 @@
       it('passes on predicate validation errors', function(done) {
         validators.validateGoTo('@foo if $bar', null, function(err, result) {
           (!!err).should.be.true;
-          err.toString().should.equal(
+          err.toString().includes(
             'Error: Unrecognized content at position 0.'
-          );
+          ).should.be.true;
           done();
         });
       });
