@@ -183,9 +183,10 @@
         var prules = getSampleParserRules();
         var tokenizer = new parse.Tokenizer(trules, false);
         var parser = new parse.Parser(prules);
-        tokenizer.run('foo < 3', function(err, tokens) {
+        var content = 'foo < 3';
+        tokenizer.run(content, function(err, tokens) {
           (!!err).should.be.false;
-          var result = parser.run(tokens, 'root', function(err, tree) {
+          var result = parser.run(tokens, 'root', content, function(err, tree) {
             (!!err).should.be.false;
             done();
           });
@@ -212,9 +213,10 @@
         var prules = getSampleParserRules();
         var tokenizer = new parse.Tokenizer(trules, false);
         var parser = new parse.Parser(prules);
-        tokenizer.run('foo < 3', function(err, tokens) {
+        var content = 'foo < 3';
+        tokenizer.run(content, function(err, tokens) {
           (!!err).should.be.false;
-          var result = parser.run(tokens, 'unknown-root', function(err, tree) {
+          var result = parser.run(tokens, 'unknown-root', content, function(err, tree) {
             (!!err).should.be.true;
             err.toString().should.equal(
               'Error: No matching rules for that root.');
@@ -257,12 +259,14 @@
         var trules = getSampleTokenRules();
         var tokenizer = new parse.Tokenizer(trules, false);
         var parser = new parse.Parser(prules);
-        tokenizer.run('foo bar', function(err, tokens) {
+        var content = 'foo bar';
+        tokenizer.run(content, function(err, tokens) {
           (!!err).should.be.false;
-          var result = parser.run(tokens, 'root', function(err, tree) {
+          var result = parser.run(tokens, 'root', content, function(err, tree) {
             (!!err).should.be.true;
-            err.toString().should.equal(
-              'Error: Content is ambiguous, 2 ways to parse it.');
+            err.toString().startsWith(
+              'Error: Content is ambiguous, 2 ways to parse it'
+            ).should.be.true;
             (tree === undefined).should.be.true;
             done();
           });
@@ -284,9 +288,10 @@
         var trules = getSampleTokenRules();
         var tokenizer = new parse.Tokenizer(trules, false);
         var parser = new parse.Parser(prules);
-        tokenizer.run('foo', function(err, tokens) {
+        var content = 'foo';
+        tokenizer.run(content, function(err, tokens) {
           (!!err).should.be.false;
-          var result = parser.run(tokens, 'root', function(err, tree) {
+          var result = parser.run(tokens, 'root', content, function(err, tree) {
             (!!err).should.be.false;
             var twoDown = tree.children[0].rule.children[0];
             twoDown.type.should.equal('terminal');
@@ -309,12 +314,14 @@
         var trules = getSampleTokenRules();
         var tokenizer = new parse.Tokenizer(trules, false);
         var parser = new parse.Parser(prules);
-        tokenizer.run('foo and', function(err, tokens) {
+        var content = 'foo and';
+        tokenizer.run(content, function(err, tokens) {
           (!!err).should.be.false;
-          var result = parser.run(tokens, 'root', function(err, tree) {
+          var result = parser.run(tokens, 'root', content, function(err, tree) {
             (!!err).should.be.true;
-            err.toString().should.equal(
-              'Error: No valid way to parse this content.');
+            err.toString().startsWith(
+              'Error: No valid way to parse this content'
+            ).should.be.true;
             (tree === undefined).should.be.true;
             done();
           });
