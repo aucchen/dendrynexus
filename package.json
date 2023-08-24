@@ -47,5 +47,8 @@
   },
   "bin": {
     "dendry": "lib/cli/main.js"
+  },
+  "volta": {
+    "node": "18.17.1"
   }
 }

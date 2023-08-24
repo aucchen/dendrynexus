@@ -100,7 +100,16 @@
           noerr(err);
           var sets = getPropertiesFromMarkdown(data);
           validatePropertiesMatchSchema(
-            schema, sets.scene, ['options', 'sections']
+            schema, sets.scene, [
+              'options', 
+              'sections',
+              'setSpriteStyles',
+              'setTopLeftStyle',
+              'setTopRightStyle',
+              'setBottomLeftStyle',
+              'setBottomRightStyle',
+              'audio',
+            ]
             );
           done();
         });
