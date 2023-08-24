@@ -200,17 +200,41 @@ would have a five out of six chance of going to the `roll-fail` scene.
 Repeated scenes can have different if expressions to further tune the
 probabilities.
 
+## go to ref
+
+## go sub
+
+## go sub start
+
+## go sub end
+
 ## new page
 
 ## game over
 
 ## set root
 
+## is top
+
+## is special
+Scene such as settings, credits or help that are not part of the main game
+
 
 ## min choices
 
 ## max choices
 
+## set jump
+
+## set bg
+Url to a filename to set the background image for the scene
+
+## set sprites
+
+## set music
+_Experimental_
+
+## achievement
 
 ## content
 *Required*

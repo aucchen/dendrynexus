@@ -286,7 +286,7 @@
         var json = '{"title":"The Title", "author":a}';
         engine.convertJSONToGame(json, function(err, game) {
           (!!err).should.be.true;
-          err.toString().should.equal('SyntaxError: Unexpected token a');
+          err.toString().should.equal('SyntaxError: Unexpected token a in JSON at position 31');
           done();
         });
       });

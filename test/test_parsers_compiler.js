@@ -986,7 +986,16 @@
           game.author.should.equal('Jo Doe');
           var _;
           var scenes = 0;
-          for (_ in game.scenes) {
+          for (var sceneName in game.scenes) {
+            if([
+              'backSpecialScene',
+              'jumpScene',
+              'prevScene',
+              'prevTopScene',
+              'returnScene',
+            ].includes(sceneName)){
+              continue;
+            }
             scenes++;
           }
           var qualities = 0;

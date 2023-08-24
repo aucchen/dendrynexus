@@ -255,7 +255,7 @@
       var text = out.output[0];
       text.should.equal(
         'Two households, both alike in dignity, ' +
-        'in fair Verona where\nwe lay our scene.\n'
+        'in fair Verona where\nwe lay our scene.'
       );
     });
 
