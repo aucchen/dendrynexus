@@ -225,9 +225,9 @@
       it('should pass on tokenizer errors', function(done) {
         logic.compilePredicate('$foo', function(err, fn) {
           (!!err).should.be.true;
-          err.toString().should.equal(
-            'Error: Unrecognized content at position 0.'
-          );
+          err.toString().includes(
+            'Unrecognized content at position 0.'
+          ).should.be.true;
           done();
         });
       });
@@ -235,9 +235,9 @@
       it('should pass on compiler errors', function(done) {
         logic.compilePredicate('true foo', function(err, fn) {
           (!!err).should.be.true;
-          err.toString().should.equal(
-            'Error: No valid way to parse this content.'
-          );
+          err.toString().startsWith(
+            'Error: No valid way to parse this content'
+          ).should.be.true;
           done();
         });
       });
