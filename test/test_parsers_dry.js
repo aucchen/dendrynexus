@@ -631,32 +631,6 @@
 
     });
 
-    // ----------------------------------------------------------------------
-
-    describe('filesystem', function() {
-      it('should load and parse file', function(done) {
-        var fn = path.join(__dirname, 'files', 'test_dry_parser.test.dry');
-        parse.parseFromFile(fn, function(err, result) {
-          noerr(err);
-          result.id.should.equal('test_dry_parser');
-          result.type.should.equal('test');
-          result.sections.length.should.equal(4);
-          result.sections[0].id.should.equal('test_dry_parser.new-id');
-          result.sections[0].options.length.should.equal(4);
-          done();
-        });
-      });
-
-      it('should fail if the file is not there', function(done) {
-        var fn = path.join(__dirname, 'files', 'not-a-file.type.dry');
-        parse.parseFromFile(fn, function(err, result) {
-          (!!err).should.be.true;
-          (result === undefined).should.be.true;
-          done();
-        });
-      });
-
-    });
 
     // ----------------------------------------------------------------------
 

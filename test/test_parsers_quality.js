@@ -8,6 +8,7 @@
   'use strict';
 
   var path = require('path');
+  var fs = require('fs');
   var should = require('should');
   // Disable errors from using the should library.
   /*jshint -W030 */
@@ -21,6 +22,16 @@
 
   var parse = require('../lib/parsers/quality');
   var dryParser = require('../lib/parsers/dry');
+
+  // Loads and parses the given file.
+  var parseFromFile = function(parseFromContent, filename, callback) {
+    fs.readFile(filename, function(err, content) {
+      if (err) {
+        return callback(err);
+      }
+      parseFromContent(filename, content.toString(), callback);
+    });
+  };
 
   describe('quality parser', function() {
 
@@ -121,7 +132,7 @@
 
     it('should load and parse quality file', function(done) {
       var fn = path.join(__dirname, 'files', 'test_quality_parser.quality.dry');
-      parse.parseFromFile(fn, function(err, result) {
+      parseFromFile(parse.parseFromContent, fn, function(err, result) {
         noerr(err);
         dryParser.removeMetadataFromObject(result);
         result.should.eql({
@@ -140,7 +151,7 @@
 
     it('should pass on dry file errors', function(done) {
       var fn = path.join(__dirname, 'files', 'unknown.scene.dry');
-      parse.parseFromFile(fn, function(err, result) {
+      parseFromFile(parse.parseFromContent, fn, function(err, result) {
         (!!err).should.be.true;
         (result === undefined).should.be.true;
         done();
