@@ -978,43 +978,45 @@
 
     // ----------------------------------------------------------------------
 
-    // describe('compiling files', function() {
-    //   it('should compile a standard project directory', function(done) {
-    //     var diry = path.resolve(__dirname, 'files', 'test_game', 'source');
-    //     compiler.compileGame(diry, function(err, game) {
-    //       noerr(err);
-    //       game.title.should.equal('Test Game');
-    //       game.author.should.equal('Jo Doe');
-    //       var _;
-    //       var scenes = 0;
-    //       for (var sceneName in game.scenes) {
-    //         if([
-    //           'backSpecialScene',
-    //           'jumpScene',
-    //           'prevScene',
-    //           'prevTopScene',
-    //           'returnScene',
-    //         ].includes(sceneName)){
-    //           continue;
-    //         }
-    //         scenes++;
-    //       }
-    //       var qualities = 0;
-    //       for (_ in game.qualities) {
-    //         qualities++;
-    //       }
-    //       var qdisplays = 0;
-    //       for (_ in game.qdisplays) {
-    //         qdisplays++;
-    //       }
-    //       scenes.should.equal(6);
-    //       qualities.should.equal(1);
-    //       qdisplays.should.equal(1);
-    //       done();
-    //     });
-    //   });
+    describe('compiling files', function() {
+      it('should compile a standard project directory', function(done) {
+        var diry = path.resolve(__dirname, 'files', 'test_game', 'source');
+        utils.fetchContent(diry, function(err, files) {
+          compiler.compileGame(files, function(err, game) {
+            noerr(err);
+            game.title.should.equal('Test Game');
+            game.author.should.equal('Jo Doe');
+            var _;
+            var scenes = 0;
+            for (var sceneName in game.scenes) {
+              if([
+                'backSpecialScene',
+                'jumpScene',
+                'prevScene',
+                'prevTopScene',
+                'returnScene',
+              ].includes(sceneName)){
+                continue;
+              }
+              scenes++;
+            }
+            var qualities = 0;
+            for (_ in game.qualities) {
+              qualities++;
+            }
+            var qdisplays = 0;
+            for (_ in game.qdisplays) {
+              qdisplays++;
+            }
+            scenes.should.equal(6);
+            qualities.should.equal(1);
+            qdisplays.should.equal(1);
+            done();
+          });
+        });
+      });
 
-    // }); // end describe loading/saving
+    }); // end describe loading/saving
 
     // ----------------------------------------------------------------------
 
