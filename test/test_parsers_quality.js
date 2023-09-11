@@ -47,13 +47,46 @@
       });
     });
 
-    it('should parse initial value', function(done) {
-      var content = 'name: Foo Quality\ninitial: 10b';
-      parse.parseFromContent('foo.quality.dry', content, function(err, result) {
+    it('should parse initial int/float value', function(done) {
+      var content = 'name: Float Quality\ninitial: 10';
+      parse.parseFromContent('floatq.quality.dry', content, function(err, result) {
         noerr(err);
-        result.id.should.equal('foo');
-        result.name.should.equal('Foo Quality');
+        result.id.should.equal('floatq');
+        result.name.should.equal('Float Quality');
         result.initial.should.equal(10);
+        done();
+      });
+    });
+
+    it('should parse initial boolean true/TRUE value', function(done) {
+      var content = 'name: Bool Quality\ninitial: true';
+      parse.parseFromContent('boolq.quality.dry', content, function(err, result) {
+        noerr(err);
+        result.id.should.equal('boolq');
+        result.name.should.equal('Bool Quality');
+        result.initial.should.equal(true);
+        done();
+      });
+    });
+
+    it('should parse initial boolean false/FALSE value', function(done) {
+      var content = 'name: Bool Quality\ninitial: false';
+      parse.parseFromContent('boolq.quality.dry', content, function(err, result) {
+        noerr(err);
+        result.id.should.equal('boolq');
+        result.name.should.equal('Bool Quality');
+        result.initial.should.equal(false);
+        done();
+      });
+    });
+
+    it('should parse initial string value', function(done) {
+      var content = 'name: String Quality\ninitial: my initial value';
+      parse.parseFromContent('stringq.quality.dry', content, function(err, result) {
+        noerr(err);
+        result.id.should.equal('stringq');
+        result.name.should.equal('String Quality');
+        result.initial.should.equal("my initial value");
         done();
       });
     });
