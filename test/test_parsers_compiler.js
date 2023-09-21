@@ -1008,7 +1008,7 @@
             for (_ in game.qdisplays) {
               qdisplays++;
             }
-            scenes.should.equal(6);
+            scenes.should.equal(8);
             qualities.should.equal(1);
             qdisplays.should.equal(1);
             done();

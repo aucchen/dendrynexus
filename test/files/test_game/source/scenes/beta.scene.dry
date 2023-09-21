@@ -3,5 +3,14 @@ tags: top
 new-page: yes
 order: 20
 on-arrival: {! Q.foo = Q.foo ? Q.foo+1 : 1; !}
+go-to: 1; 2 if foo = 1
 
 This is beta scene.
+
+@1
+
+This is beta subscene 1.
+
+@2
+
+This is beta subscene 2.
