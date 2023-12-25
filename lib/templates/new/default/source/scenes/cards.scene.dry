@@ -1,0 +1,18 @@
+title: Cards
+
+
+@card1
+title: Card 1
+is-card: true
+new-page: true
+tags: deck1
+
+(text for Card 1 goes here)
+
+@card2
+title: Card 2
+is-card: true
+new-page: true
+tags: deck1
+
+(text for card 2 goes here)
