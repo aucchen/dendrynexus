@@ -82,6 +82,52 @@ header {
 #qualities h1 + p:first-line {
   font-weight: normal;
 }
+/* smaller screens: hide left margin */
+@media screen and (max-width: 1000px) {
+  .tools {
+      margin-right: 0.4em;
+      margin-left: 0.4em;
+  }
+  #mid_panel {
+      margin-right: 0.4em;
+  }
+}
+/* mobile: move the stat box to the top if the screen is too small,
+ * and reduce font size slightly. */
+@media screen and (max-width: 560px) {
+  #page {
+      position: static;
+  }
+  #content {
+      position: static;
+      font-size: 1.05em;
+      line-height: 160%;
+      padding: 1em 1em 1.5em 1em;
+  }
+  #qualities {
+      font-size: 1em;
+  }
+  #tools_wrapper {
+    position: static;
+  }
+  .tools {
+      width: 90%;
+      margin: 2em 0 1em 0;
+      margin: 0.4em;
+  }
+  .tools.left {
+      float: none;
+      left: 0;
+  }
+  .tools.right {
+      float: none;
+      right: 0;
+  }
+  #mid_panel {
+      margin: 0 auto;
+  }
+}
+
 
 
 header h1, header h2 {
@@ -275,15 +321,15 @@ blockquote + blockquote.attribution {
  * TODO
  */
 
-#decks {
+ul.decks, ul.hand, ul.pinnedCards {
+  list-style: none;
+}
+
+.hand {
 
 }
 
-#hand {
-
-}
-
-#pinnedCards {
+.pinnedCards {
 
 }
 
@@ -292,7 +338,8 @@ blockquote + blockquote.attribution {
   max-height: 150px;
 }
 
-.card-in-hand .pinned-card .deck {
+.card-in-hand, .pinned-card, .deck {
+  float: left;
   width: 120px;
   height: 150px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
