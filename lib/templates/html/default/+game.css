@@ -9,10 +9,12 @@ header, #content, footer {
   color: #431;
   max-width: 540px;
   margin: 0 auto;
+  overflow: auto;
 }
 footer {
   margin-top: 1em;
   font-size: 0.8em;
+  position: relative;
 }
 footer a {
   padding-right: 1em;
@@ -22,10 +24,66 @@ header {
 }
 #header-links {
   text-align: left;
+  float: left;
+  display: inline-block;
+  margin-bottom: 0.5em;
 }
 #header-links a {
   padding-right: 1em;
 }
+
+/* This is mostly copied from undum. */
+#mid_panel {
+  margin: 0 16rem;
+}
+#page {
+  margin: 0 auto;
+  position: relative;
+}
+#tools_wrapper {
+  position: absolute;
+  width: 100%;
+  max-width: 69em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.tools {
+  padding: 0.6em;
+  width: 14rem;
+  color: #431;
+  background-color: #f3f3f3;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+.tools.left {
+  float: left;
+  left: 0.4em;
+}
+.tools.right {
+  float: right;
+  right: 0.4em;
+}
+#qualities {
+  text-indent: 0;
+  line-height: 1.3em;
+}
+#qualities p {
+  text-indent: 0;
+}
+#qualities h1 {
+  font-size: 1.1em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
+               rgba(0, 0, 0, 0.1) -1px -1px 2px;
+}
+#qualities h1 + p:first-line {
+  font-weight: normal;
+}
+
+
 header h1, header h2 {
   display: inline-block;
   font-weight: normal;
@@ -76,13 +134,13 @@ p {
   margin-bottom: 1em;
   text-indent: 1em;
 }
-h1 + p {
+#content h1 + p {
   text-indent: 0;
 }
-h1 + p:first-line {
+#content h1 + p:first-line {
   font-weight: bold;
 }
-h1 + p:first-letter {
+#content h1 + p:first-letter {
   position: relative;
   padding-top: 0.16em;
   display: block;
@@ -212,6 +270,37 @@ blockquote + blockquote.attribution {
 .delete_button {
 }
 
+/*
+ * Card stuff for dendrynexus
+ * TODO
+ */
+
+#decks {
+
+}
+
+#hand {
+
+}
+
+#pinnedCards {
+
+}
+
+.deck {
+  max-width: 120px;
+  max-height: 150px;
+}
+
+.card-in-hand .pinned-card .deck {
+  width: 120px;
+  height: 150px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #111;
+}
+
+.card-caption {
+}
 /*
  * sprite stuff- feel free to comment out/remove if not using
  */

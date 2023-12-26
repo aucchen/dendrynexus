@@ -18,18 +18,6 @@
     <div class="background" id="bg1">
     </div>
 
-    <header>
-      <h1>{{game.title}}</h1>
-      <h2>{{game.author}}</h2>
-
-      <div id="header-links">
-        <!--<a id="stats-link" onclick="window.showStats();" href="#">Status</a>-->
-        <a onclick="dendryUI.showSaveSlots();" href="#">Save/Load</a>
-        <a onclick="dendryUI.showOptions();" href="#">Options</a>
-      </div>
-
-    </header>
-
     <div id="options" class="overlay" style="display: none;">
         <div class="overlay_top">
             <table>
@@ -216,9 +204,31 @@
         <div class="sprite" id="bottomRightSprite"></div>
     </div>
 
-    <div id='content'></div>
+    <div id='page'>
+        <div id="mid_panel">
+            <header>
+                <h1>{{game.title}}</h1>
+                <h2>{{game.author}}</h2>
 
-    <footer>
+                <div id="header-links">
+                    <!--<a id="stats-link" onclick="window.showStats();" href="#">Status</a>-->
+                    <a onclick="dendryUI.showSaveSlots();" href="#">Save/Load</a>
+                    <a onclick="dendryUI.showOptions();" href="#">Options</a>
+                </div>
+            </header>
+            <div id="tools_wrapper">
+                <div id='stats_sidebar' class='tools left'>
+                    <div id="qualities">
+                    </div>
+                </div>
+            </div>
+            <div id='content'>
+                <div id="decks"></div>
+                <div id="hand"></div>
+                <div id="pinnedCards"></div>
+            </div>
+
+            <footer>
       <!--
       <p>
         <a onclick="window.showSaveSlots();" href="#">Save/Load</a>
@@ -229,6 +239,8 @@
       &copy; 2021 Autumn Chen.
       Made with <a href="https://github.com/aucchen/dendry">Dendry</a>.
       -->
-    </footer>
+            </footer>
+        </div>
+    </div>
   </body>
 </html>

@@ -9,6 +9,7 @@ Here, the main deck will be displayed. Clicking on the deck draws a card into yo
 
 
 @deck
+title: Deck 1
 is-deck: true
 
 - #deck1
