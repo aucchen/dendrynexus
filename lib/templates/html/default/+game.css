@@ -346,9 +346,17 @@ a.card {
   border: 10px solid #ccc;
   margin-bottom: 0.5em;
 }
+div.blank-card {
+  display: inline-block;
+  width: 120px;
+  height: 150px;
+  background-color: #ddd;
+  border: 10px solid #ccc;
+  margin-bottom: 0.5em;
+}
 
 .card-in-hand, .pinned-card, .deck {
-  float: left;
+  display: inline-block;
   position: relative;
   max-width: 150px;
   margin-right: 1em;
@@ -357,6 +365,7 @@ a.card {
 .card-caption {
   text-align: center;
   display: block;
+  font-size: 1em;
 }
 /*
  * sprite stuff- feel free to comment out/remove if not using
