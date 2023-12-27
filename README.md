@@ -1,13 +1,16 @@
-![Dendry](http://dendry.org/img/logo_64.png) Dendry
+DendryNexus
 ======
 
 [![Build Status](https://travis-ci.org/dendry/dendry.svg?branch=master)](https://travis-ci.org/dendry/dendry)
 [![Dependencies Status](https://david-dm.org/dendry/dendry.svg)](https://david-dm.org/dendry/dendry)
 [![Test Coverage](https://coveralls.io/repos/dendry/dendry/badge.png?branch=master)](https://coveralls.io/r/dendry/dendry)
 
-This is a new project aimed at developing a suite of command line
-tools and a common file format for hypertext interactive fiction.
 
+DendryNexus is an interactive fiction framework based on [Dendry](https://github.com/aucchen/dendry). It is a strict superset of dendry, and has all of its features, but in addition has support for the card-game paradigm used in the now-defunct [StoryNexus](http://wiki.failbettergames.com/). Unlike StoryNexus, DendryNexus works entirely in the browser and does not have a server component.
+
+Right now, using DendryNexus is not recommended unless you have used dendry previously, are somewhat familiar with the StoryNexus paradign, and can debug js/html/css.
+
+The best way to get started with dendry is to read [smhwr's guide](https://smwhr.notion.site/Getting-started-with-Dendry-188e7e39a961497fb2d0a0deee0c21a0).
 
 To install:
 
@@ -15,11 +18,11 @@ To install:
 
 To create a new project:
 
-`dendry new`
+`dendrynexus new`
 
-To create a playable html/js from a dendry project:
+To create a playable html/js from a dendrynexus project:
 
-`dendry make-html`
+`dendrynexus make-html`
 
 
 ## Dendry scene keywords
