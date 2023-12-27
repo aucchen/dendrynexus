@@ -321,7 +321,7 @@ blockquote + blockquote.attribution {
  * TODO
  */
 
-ul.decks, ul.hand, ul.pinnedCards {
+ul.decks, ul.hand, ul.pinned-cards {
   list-style: none;
   padding-left: 0;
 }
@@ -330,7 +330,7 @@ ul.decks, ul.hand, ul.pinnedCards {
 
 }
 
-.pinnedCards {
+.pinned-cards {
 
 }
 
