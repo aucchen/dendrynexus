@@ -323,6 +323,7 @@ blockquote + blockquote.attribution {
 
 ul.decks, ul.hand, ul.pinnedCards {
   list-style: none;
+  padding-left: 0;
 }
 
 .hand {
@@ -334,19 +335,28 @@ ul.decks, ul.hand, ul.pinnedCards {
 }
 
 .deck {
-  max-width: 120px;
-  max-height: 150px;
+
+}
+
+a.card {
+  display: inline-block;
+  width: 120px;
+  height: 150px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 10px solid #ccc;
+  margin-bottom: 0.5em;
 }
 
 .card-in-hand, .pinned-card, .deck {
   float: left;
-  width: 120px;
-  height: 150px;
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-  border: 1px solid #111;
+  position: relative;
+  max-width: 150px;
+  margin-right: 1em;
 }
 
 .card-caption {
+  text-align: center;
+  display: block;
 }
 /*
  * sprite stuff- feel free to comment out/remove if not using
