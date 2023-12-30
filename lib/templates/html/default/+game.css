@@ -345,6 +345,12 @@ a.card {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   border: 10px solid #ccc;
   margin-bottom: 0.5em;
+  position: relative;
+}
+a.card:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  left: -5px;
+  top: -5px;
 }
 div.blank-card {
   display: inline-block;
@@ -366,6 +372,24 @@ div.blank-card {
   text-align: center;
   display: block;
   font-size: 1em;
+}
+
+.card-tooltip {
+  position: absolute;
+  visibility: hidden;
+  width: 150px;
+  max-width: 200px;
+  font-size: 0.9em;
+  z-index: 2;
+  padding: 0.2em;
+  border: 1px solid;
+  background-color: #eee;
+  left: 105%;
+}
+
+a.card:focus .card-tooltip, a.card:hover .card-tooltip {
+  visibility: visible;
+  position: absolute;
 }
 /*
  * sprite stuff- feel free to comment out/remove if not using
