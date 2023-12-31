@@ -5,3 +5,5 @@ is-special: true
 = Status
 
 This is displayed in the sidebar, and can be used to show various things.
+
+Magic: [+ magic : qmagic +]

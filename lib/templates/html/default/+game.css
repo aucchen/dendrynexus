@@ -387,6 +387,12 @@ div.blank-card {
   left: 105%;
 }
 
+.card-img {
+  height: 150px;
+  width: 120px;
+  object-fit: cover;
+}
+
 a.card:focus .card-tooltip, a.card:hover .card-tooltip {
   visibility: visible;
   position: absolute;

@@ -1,0 +1,5 @@
+# Magic
+
+(0..1) : none
+(2..4) : weak
+(5..) : decent
