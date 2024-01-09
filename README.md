@@ -24,112 +24,37 @@ To create a playable html/js from a dendrynexus project:
 
 `dendrynexus make-html`
 
+## DendryNexus Features
 
-## Dendry scene keywords
+### Hands
 
-These are elements that can be used following a scene declaration. A scene declaration is a line that contains `@scene_name`.
+A scene with the property `is-hand: true` will be presented as a hand, showing the choices in this scene as decks, the cards in the hand, and the pinned cards.
 
-Note: all of these can be written in camelCase or dash-between-words.
+All choices available in a "hand" scene should be either decks or pinned cards, and will be displayed as such.
 
-```
-    title: string
-    subtitle: string
-    unavailable-subtitle: string
-    view-if: boolean expression
-    choose-if: boolean expression
-    on-arrival: semicolon-separated list of commands
-    on-departure: semicolon-separated list of commands
-    go-to: name of scene, or semicolon-separated list of the format 'scene1 if <condition>'
-    tags: comma-separated list of tags
-    max-visits: int
-    priority: int (I'm not sure how this works yet)
-    frequency: I'm not sure how this works yet
+### Decks
 
-    is-special: boolean
-    set-bg: path to background image, or hex color
-    set-jump: name of scene
-```
+Decks are implemented as individual dendry scenes that do not have any text, but do have the `is-deck: true` property, as well as a set of potential choices (most likely tag choices). In order to draw from a deck, DendryNexus will identify all of the available scenes from the deck-scene's potential choices, and randomly return one such scene. So it really isn't like drawing a card from a deck at all...
 
-## Special scene names
+The `card-image` property is used to indicate the deck's image.
 
-`prevScene` - always goes to the previous scene.
+### Cards
 
-`jumpScene` - always goes to the scene designated by the last `set-jump` command.
+Cards are implemented as dendry scenes that have the `is-card: true` property. Pinned cards have the `is-pinned-card: true` property. Cards are otherwise just normal scenes, and can lead to a chain of other scenes that are not cards. Transitioning back to the hand scene has to be done manually at the end of a scene chain.
 
-`backSpecialScene` - goes to the previous scene visited before entering the last visited special scene (a special scene is designated by `is-special: true`).
+The `card-image` property is used to indicate the card image.
 
+### Stat checks
 
-## Dendry syntax reference
+Using a stat check in a scene requires a few different properties to be in order:
 
-All of these are elements that can be used in the body text.
+- `check-quality:` this is the name of a single numeric quality
+- `broad-difficulty:`  or `narrow-difficulty:` See FL wiki
+- `check-success-go-to:` scene to go to on success
+- `check-failure-go-to:` scene to go to on failure
 
-```
-    *some words* - emphasis
-    **some words** - strong emphasis
-    > paragraph - quotation
-    >> paragraph - attribution
-    = paragraph - heading
-    // + <newline> - manual line break
-    <blank line> - paragraph break
-    --- - horizontal rule / break
-    [some words] - hidable section
-    [+ foo : bar +] - insert quality value with optional qdisplay
-    [? if condition: text ?] - conditional display of text
-    {!<span class="foo">aaa</span>!} - raw html
-    #comment - comment
-```
+Selecting this scene will immediately transition to either the scene indicated by `check-success-go-to` or `check-failure-go-to`. The text in a stat check scene will be displayed before the results, on either success or failure.
 
-## Examples
-
-Displaying variables in text: `[+ var +]`
-
-Varying text based on a condition: `[? if var = 1 : something ?]`
-
-Basic scene example:
-
-```
-title: scene0
-go-to: scene1
-
-# this is the start of the .scene.dry file.
-
-@scene1
-title: Scene
-subtitle: subtitle of the scene
-unavailable-subtitle: scene cannot be selected
-view-if: var1 = 1 and (var2 = 2 or var3 = 3)
-choose-if: var4 = 4
-on-arrival: v2 = 1; v3 = 3; vs = "abc"
-tags: start, tag1, tag2
-new-page: true
-max-visits: 2
-
-Content goes here.
-
-var1: [+ var1 +]
-
-vs: [+ vs +]
-
-[? if var1 = 1 : aaaaa ?]
-
-# these are links
-
-- @scene2: Choice 1
-- @scene3: Choice 2
-
-
-@scene2
-
-Content for scene2 goes here.
-
-@scene3
-
-Content for scene3 goes here.
-```
-
-Including javascript in `on-arrival`: `{! Q['var1'] = Math.cos(Math.PI/4); !}`
-
-Including javascript in `view-if`: `{! return ((Q['a'] || 0)===(Q['b'] || 0)); !}`
 
 
 ## Debugging
