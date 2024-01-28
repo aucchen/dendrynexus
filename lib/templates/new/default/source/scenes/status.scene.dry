@@ -6,4 +6,4 @@ is-special: true
 
 This is displayed in the sidebar, and can be used to show various things.
 
-Magic: [+ magic : qmagic +]
+Magic [+ magic : qmagic +]

@@ -1,0 +1,256 @@
+body {
+  font-family: "Minion Pro", Georgia, serif;
+  /*font-size: 1.125em;*/
+  background-color: #f3f3e3;
+  padding: 0;
+  line-height: 155%;
+}
+header, #content, footer {
+  color: #431;
+  max-width: 540px;
+  margin: 0 auto;
+}
+footer {
+  margin-top: 1em;
+  font-size: 0.8em;
+}
+footer a {
+  padding-right: 1em;
+}
+header {
+  text-align: right
+}
+#header-links {
+  text-align: left;
+}
+#header-links a {
+  padding-right: 1em;
+}
+header h1, header h2 {
+  display: inline-block;
+  font-weight: normal;
+  margin: 0;
+  font-size: 1em;
+}
+header h1 {
+  font-weight: bold;
+}
+header h2:before {
+  content: "by";
+  font-style: italic;
+  padding: 0 0.3em 0 0;
+}
+#content {
+  position: relative;
+  background-color: #f3f3f3;
+  font-size: 1.1em;
+  padding: 1em 1.5em 1.5em 1.5em;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+#content #read-marker {
+  border: none;
+  border-top: 1px solid #000;
+  height: 1px;
+  width: 20%;
+  position: center;
+}
+#content h1:first-child {
+  margin-top: 0.5em;
+}
+#content h1 {
+  margin: 2em 0 1em 0;
+  font-size: 1.35em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: rgba(255, 255, 255, 0.75) 2px 2px 2px,
+               rgba(0, 0, 0, 0.1) -1px -1px 2px;
+}
+a {
+  color: #900;
+  text-decoration: none;
+}
+p {
+  margin: 0;
+  margin-bottom: 1em;
+  text-indent: 1em;
+}
+h1 + p {
+  text-indent: 0;
+}
+h1 + p:first-line {
+  font-weight: bold;
+}
+h1 + p:first-letter {
+  position: relative;
+  padding-top: 0.16em;
+  display: block;
+  float: left;
+  font-weight: normal;
+  font-size: 3.2em;
+  line-height: 0.75em;
+}
+p.game-over {
+  border: 2px solid #bbb;
+  padding: 0.5em;
+  margin: 0.5em 0 0 0;
+  border-radius: 4px;
+  color: #999;
+}
+ul.choices {
+  border: 2px solid #876;
+  padding: 0;
+  margin: 0.25em 0 0 0;
+  list-style-type: none;
+  border-radius: 4px;
+}
+ul.choices li {
+  border-bottom: 1px solid #876;
+  padding: 0.5em;
+}
+ul.choices li div.subtitle {
+  margin-left: 2em;
+  font-style: italic;
+}
+ul.choices li.unavailable {
+  color: #999;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  cursor: default !important;
+}
+ul.choices li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+ul.choices li:last-child {
+  border-bottom: none;
+}
+ul.choices a {
+  text-decoration: none;
+}
+blockquote {
+  margin: 1em 2em;
+}
+blockquote.attribution {
+  margin-left: 4em;
+}
+blockquote + blockquote.attribution {
+  margin-top: -1em;
+}
+#save {
+    background: rgba(0,0,0,0.7);
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+#saves_table {
+    position: relative;
+    max-width: 540px;
+    margin: 100px auto;
+    background: rgba(50,50,50,0.7);
+    border: 2px solid;
+    color: white;
+}
+.overlay {
+    background: rgba(0,0,0,0.7);
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    overflow: scroll;
+}
+.overlay_top {
+    position: relative;
+    max-width: 540px;
+    margin: 100px auto;
+    background: rgba(50,50,50,0.7);
+    border: 2px solid;
+    color: white;
+}
+.save_info {
+    min-width: 10em;
+}
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #f3f3e3;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+/*
+ * This is used for overlaying transparencies
+ * only transition on fade-in
+ * */
+#bg2 {
+    z-index: -100;
+}
+#bg1 {
+    z-index: -99;
+}
+.b {
+}
+.save_button {
+}
+.delete_button {
+}
+
+/*
+ * sprite stuff- feel free to comment out/remove if not using
+ */
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+#contentSpriteContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: 62em;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: -97;
+}
+.sprite {
+    position: absolute;
+    width: 180px;
+}
+#topLeftSprite {
+    float: left;
+    top: -1em;
+    left: 0.4em;
+}
+#topRightSprite {
+    float: right;
+    top: -1em;
+    right: 0.4em;
+}
+#bottomLeftSprite {
+    float: left;
+    left: 0.4em;
+    top: 50%;
+}
+#bottomRightSprite {
+    float: right;
+    right: 0.4em;
+    top: 50%;
+}
+
