@@ -366,6 +366,7 @@ div.blank-card {
   position: relative;
   max-width: 150px;
   margin-right: 1em;
+  vertical-align: top;
 }
 
 /* TODO: unavailable card */
