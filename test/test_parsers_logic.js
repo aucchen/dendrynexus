@@ -258,6 +258,39 @@
           });
       });
 
+      it('should work with single-quoted strings', function(done) {
+        logic.compilePredicate(
+          "foo = 'abc' and bar = ' '",
+          function(err, fn) {
+            noerr(err);
+            var state = {
+              qualities: {
+                foo: "abc",
+                bar: " ",
+              }
+            };
+            engine.runPredicate(fn, false, {}, state).should.be.true;
+            done();
+          });
+      });
+
+      it('should work with single and double equals signs', function(done) {
+        logic.compilePredicate(
+          "foo == 'abc' and bar == ' ' and x == 2",
+          function(err, fn) {
+            noerr(err);
+            var state = {
+              qualities: {
+                foo: "abc",
+                bar: " ",
+                x: 2,
+              }
+            };
+            engine.runPredicate(fn, false, {}, state).should.be.true;
+            done();
+          });
+      });
+
     });
 
     // ----------------------------------------------------------------------
@@ -403,6 +436,59 @@
           engine.runActions([fn], {}, state);
           state.qualities.bar.should.equal(0);
           state.qualities.foo.should.equal(1);
+          done();
+        });
+      });
+
+      it('should allow assignment to a boolean expression', function(done) {
+        logic.compileActions('foo = (bar >= 1);', function(err, fn) {
+          noerr(err);
+          var state = {
+            qualities: {bar: 1}
+          };
+          engine.runActions([fn], {}, state);
+          state.qualities.bar.should.equal(1);
+          state.qualities.foo.should.equal(true);
+          done();
+        });
+      });
+
+      it('should allow conditionals', function(done) {
+        logic.compileActions('foo = 2 if (bar >= 1);', function(err, fn) {
+          noerr(err);
+          var state = {
+            qualities: {bar: 1}
+          };
+          engine.runActions([fn], {}, state);
+          state.qualities.bar.should.equal(1);
+          state.qualities.foo.should.equal(2);
+          done();
+        });
+      });
+
+      it('should allow conditionals of the form if-then', function(done) {
+        logic.compileActions('if (bar >= 1) then foo = 2;', function(err, fn) {
+          noerr(err);
+          var state = {
+            qualities: {bar: 1}
+          };
+          engine.runActions([fn], {}, state);
+          state.qualities.bar.should.equal(1);
+          state.qualities.foo.should.equal(2);
+          done();
+        });
+      });
+
+      it('should allow conditionals of the form if-then-else', function(done) {
+        logic.compileActions('if (bar >= 1) then foo=2 else foo=6; if (foo==6) then x = 1 else x=2;', function(err, fn) {
+          noerr(err);
+          var state = {
+            qualities: {bar: 1}
+          };
+          engine.runActions([fn], {}, state);
+          state.qualities.bar.should.equal(1);
+          state.qualities.foo.should.equal(2);
+          state.qualities.x.should.equal(2);
           done();
         });
       });
