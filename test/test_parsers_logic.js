@@ -492,6 +492,18 @@
           done();
         });
       });
+
+      it('should allow conditionals of the form if-then-else', function(done) {
+        logic.compileActions('rb_cost = 2 if rb_m > 0.1 else rb_cost = 1', function(err, fn) {
+          noerr(err);
+          var state = {
+            qualities: {bar: 1}
+          };
+          engine.runActions([fn], {}, state);
+          state.qualities.rb_cost.should.equal(1);
+          done();
+        });
+      });
     });
 
     // ----------------------------------------------------------------------
