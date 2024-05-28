@@ -31,7 +31,7 @@
     "coveralls": "2.11.x",
     "istanbul": "0.3.x",
     "jscs": "1.13.x",
-    "jshint": "2.9.x",
+    "jshint": "2.7.x",
     "marked": "0.3.x",
     "mocha": "2.2.x",
     "mocha-jshint": "2.2.x",
