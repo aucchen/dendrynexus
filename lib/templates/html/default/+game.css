@@ -4,6 +4,7 @@ body {
   background-color: #f3f3e3;
   padding: 0;
   line-height: 155%;
+  overflow-y: scroll;
 }
 header, #content, footer {
   color: #431;
@@ -83,7 +84,7 @@ header {
   font-weight: normal;
 }
 /* smaller screens: hide left margin */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .tools {
       margin-right: 0.4em;
       margin-left: 0.4em;
@@ -126,6 +127,32 @@ header {
   #mid_panel {
       margin: 0 auto;
   }
+
+  /* cards are smaller on mobile */
+  .card-img {
+    height: 125px;
+    width: 100px;
+  }
+  a.card {
+    width: 100px;
+    height: 125px;
+    border: 8px solid #ccc;
+    margin-bottom: 0.5em;
+    position: relative;
+  }
+  div.blank-card {
+    width: 100px;
+    height: 125px;
+    border: 8px solid #ccc;
+    margin-bottom: 0.5em;
+  }
+  .card-in-hand, .pinned-card, .deck {
+    max-width: 120px;
+    margin-right: 1em;
+    vertical-align: top;
+  }
+}
+
 }
 
 
