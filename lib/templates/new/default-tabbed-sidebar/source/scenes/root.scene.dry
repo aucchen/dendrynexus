@@ -1,0 +1,27 @@
+title: Root Scene
+new-page: true
+go-to: main if started = 1; start_menu if started = 0
+
+
+@start_menu
+
+= {{title}}
+
+- @start: Start game
+- @credits: Credits
+
+
+@start
+on-arrival: started = 1
+new-page: true
+
+(text for introducing the game goes here, etc.)
+
+- @main: Main status
+
+
+@credits
+
+(Credits go here)
+
+- @start_menu: Back to menu

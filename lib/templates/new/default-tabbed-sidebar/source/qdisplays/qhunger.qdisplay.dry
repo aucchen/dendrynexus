@@ -1,0 +1,4 @@
+# hunger
+
+(0..2) : Not hungry
+(3..10) : A little hungry

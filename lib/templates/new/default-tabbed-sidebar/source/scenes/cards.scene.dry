@@ -1,0 +1,43 @@
+title: Cards
+
+
+@card1
+title: Card 1 - challenges
+is-card: true
+new-page: true
+tags: deck1
+
+(text for Card 1 goes here)
+
+- @c1_challenge1
+- @c1_back
+
+@c1_challenge1
+title: Challenge 1 - magic
+check-quality: magic
+broad-difficulty: 5
+check-success-go-to: c1_magic_win
+check-failure-go-to: c1_magic_lose
+
+@c1_magic_win
+
+Congratulations, you won the challenge!
+
+
+@c1_magic_lose
+on-arrival: magic += 1
+
+Oh no, you failed the challenge! But you learned some magic.
+
+@c1_back
+title: Back
+go-to: main
+
+@card2
+title: Card 2
+is-card: true
+new-page: true
+tags: deck1
+max-visits: 1
+
+(text for card 2 goes here)

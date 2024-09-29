@@ -1,0 +1,17 @@
+title: Main
+new-page: true
+is-hand: true
+max-cards: 3
+
+Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
+
+- @deck
+- #pinnedCard
+
+
+@deck
+title: Deck 1
+subtitle: Deck 1 subtitle
+is-deck: true
+
+- #deck1
