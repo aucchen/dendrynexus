@@ -20,18 +20,20 @@
 
     <div id="options" class="overlay" style="display: none;">
         <div class="overlay_top">
+        <!-- TODO: enable/disable animations as you wish -->
             <table>
                 <tr>
                     <td>
-                        <label for="backgrounds_yes">Enable backgrounds</label>
+                        Backgrounds:
+                    </td>
+                    <td>
+                        <label for="backgrounds_yes">On</label>
                     </td>
                     <td>
                         <input type="radio" id="backgrounds_yes" name="backgrounds" value="1" onclick="window.enableBg();">
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <label for="backgrounds_no">Disable backgrounds</label>
+                        <label for="backgrounds_no">Off</label>
                     </td>
                     <td>
                         <input type="radio" id="backgrounds_no" name="backgrounds" value="0" onclick="window.disableBg();">
@@ -40,17 +42,59 @@
                 <tr>
                     <td> <hr> </td>
                 </tr>
+                <!--
                 <tr>
                     <td>
-                        <label for="animate_yes">Enable animation</label>
+                        Images:
+                    <td>
+                        <label for="images_yes">On</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="images_yes" name="images" value="1" onclick="window.enableImages();">
+                    </td>
+                    <td>
+                        <label for="images_no">Off</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="images_no" name="images" value="0" onclick="window.disableImages();">
+                    </td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                -->
+                <tr>
+                    <td>
+                        Background animations:
+                    </td>
+                    <td>
+                        <label for="animate_bg_yes">On</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="animate_bg_yes" name="animate_bg" value="1" onclick="window.enableAnimateBg();">
+                    </td>
+                    <td>
+                        <label for="animate_bg_no">Off</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="animate_bg_no" name="animate_bg" value="0" onclick="window.disableAnimateBg();">
+                    </td>
+                </tr>
+                <tr>
+                    <td> <hr> </td>
+                </tr>
+                <tr>
+                    <td>
+                        Animations:
+                    </td>
+                    <td>
+                        <label for="animate_yes">On</label>
                     </td>
                     <td>
                         <input type="radio" id="animate_yes" name="animate" value="1" onclick="window.enableAnimate();">
                     </td>
-                </tr>
-                <tr>
                     <td>
-                        <label for="animate_no">Disable animation</label>
+                        <label for="animate_no">Off</label>
                     </td>
                     <td>
                         <input type="radio" id="animate_no" name="animate" value="0" onclick="window.disableAnimate();">
@@ -59,22 +103,25 @@
                 <tr>
                     <td> <hr> </td>
                 </tr>
+                <!--
                 <tr>
                     <td>
-                        <label for="animate_bg_yes">Enable background animation</label>
+                        Audio:
                     </td>
                     <td>
-                        <input type="radio" id="animate_bg_yes" name="animate_bg" value="1" onclick="window.enableAnimateBg();">
+                        <label for="audio_yes">On</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="audio_yes" name="audio" value="1" onclick="window.enableAudio();">
+                    </td>
+                    <td>
+                        <label for="audio_no">Off</label>
+                    </td>
+                    <td>
+                        <input type="radio" id="audio_no" name="audio" value="0" onclick="window.disableAudio();">
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <label for="animate_bg_no">Disable background animation</label>
-                    </td>
-                    <td>
-                        <input type="radio" id="animate_bg_no" name="animate_bg" value="0" onclick="window.disableAnimateBg();">
-                    </td>
-                </tr>
+                -->
                 <tr>
                     <td>
                         <button onclick="window.hideOptions();">Close</button>
